@@ -14,7 +14,7 @@ Resources:
           PGHOST: database-hai.cx0eqoo2ac8c.eu-central-1.rds.amazonaws.com
           PGUSER: mvinci
           PGPASSWORD: aws#2024Pwd
-          PGDATABASE: database-hai
+          PGDATABASE: database-hai.cx0eqoo2ac8c.eu-central-1.rds.amazonaws.com
           PGPORT: '5432'
       Events:
         ApiRequest:
