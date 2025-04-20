@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: PostGIS API on AWS Lambda
+Resources:
+  GetLocationsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handler.handler
+      Runtime: nodejs18.x
+      Timeout: 10
+      MemorySize: 512
+      Environment:
+        Variables:
+          PGHOST: database-hai.cx0eqoo2ac8c.eu-central-1.rds.amazonaws.com
+          PGUSER: mvinci
+          PGPASSWORD: aws#2024Pwd
+          PGDATABASE: database-hai.cx0eqoo2ac8c.eu-central-1.rds.amazonaws.com
+          PGPORT: '5432'
+      Events:
+        ApiRequest:
+          Type: Api
+          Properties:
+            Path: /locations
+            Method: get
+
